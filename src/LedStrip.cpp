@@ -46,13 +46,13 @@ void LedStrip::blinkRight(int r, int g, int b)
     mLeds[i].setRGB(r,g,b);
   }
   FastLED.show();
-  delay(100);
+  delay(1000);
   for(int i = (kLedAmt * 2/3) +1; i <= kLedAmt; i++)
   {
     mLeds[i].setRGB(0,0,0);
   }
   FastLED.show();
-  delay(350);
+  delay(1000);
 }
 
 void LedStrip::blinkLeft(int r, int g, int b)
@@ -62,13 +62,13 @@ void LedStrip::blinkLeft(int r, int g, int b)
     mLeds[i].setRGB(r,g,b);
   }
   FastLED.show();
-  delay(100);
+  delay(1000);
   for(int i = 0; i <= (kLedAmt * 1/3) -1; i++)
   {
     mLeds[i].setRGB(0,0,0);
   }
   FastLED.show();
-  delay(350);
+  delay(1000);
 }
 
 void LedStrip::off()
@@ -80,7 +80,7 @@ void LedStrip::off()
   FastLED.show();
 }
 
-void LedStrip::backStop(int r, int g, int b)
+void LedStrip::Stop(int r, int g, int b)
 {
   for(int i = (kLedAmt * 1/3); i <= (kLedAmt * 2/3); i++)
   {
@@ -96,13 +96,64 @@ void LedStrip::fullBack(int r, int g, int b)
     mLeds[i].setRGB(r,g,b);
   }
   FastLED.show();
-  delay(100);
+  delay(1000);
   for(int i = (kLedAmt * 1/3); i <= (kLedAmt * 2/3); i++)
   {
     mLeds[i].setRGB(0,0,0);
   }
   FastLED.show();
-  delay(350);
+  delay(1000);
+}
+
+void LedStrip::PanicButton()
+{
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 121, 0);
+  }
+  FastLED.show();
+  delay(333);
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 121, 0);
+  }
+  FastLED.show();
+  delay(333);
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 121, 0);
+  }
+  FastLED.show();
+  delay(333);
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(0, 0, 0);
+  }
+  FastLED.show();
+  delay(1000);
+
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 255);
+  }
+  FastLED.show();
+  delay(333);
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 255);
+  }
+  FastLED.show();
+  delay(333);for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 255);
+  }
+  FastLED.show();
+  delay(333);for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(0, 0, 0);
+  }
+  FastLED.show();
+  delay(1000);
 }
 
 void LedStrip::fullTill(int r, int g, int b)
@@ -196,3 +247,58 @@ void LedStrip::MuricaBaby()
 
   delay(350);
 }
+
+/*void LedStrip::SpookyScary();
+{
+  int gamer;
+  int hue = 0
+  int divisor = 30
+  float pi = 3.14159265359
+  int min_brightness = 8
+  int max_brightness = 64
+  
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    float breath = (exp(sin(millis()/5000.0*pi)) - 0.36787944)*108.0;
+    breath = map(breath, 0, 255, min_brightness, max_brightness);
+    FastLED.setBrightness(breath);
+    fill_rainbow(mLeds, kLedAmt, (hue++/divisor));
+    if(hue == (255 * divisor)) 
+    {
+  	hue = 0;
+    }
+    mLeds[i].setRGB(255, 81, 0);
+    FastLED.show();
+    delay(5); 
+  } 
+  
+  for(int i = 0; i < kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 0);
+    FastLED.show();
+    delay(100);
+    mLeds[i].setRGB(0,0,0);
+    FastLED.show();
+  }
+  delay(int gamer = random(333, 1000));
+
+  for(int i = 0; i< kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 0);
+    FastLED.show();
+    delay(100);
+    mLeds[i].setRGB(0,0,0);
+    FastLED.show();
+  }
+  delay(int gamer = random(333, 1666));
+
+  for(int i = 0; i< kLedAmt; i++)
+  {
+    mLeds[i].setRGB(255, 255, 0);
+    FastLED.show();
+    delay(100);
+    mLeds[i].setRGB(0,0,0);
+    FastLED.show();
+  }
+  delay(int gamer = random(333, 666));
+}*/

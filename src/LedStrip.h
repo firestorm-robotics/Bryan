@@ -21,11 +21,14 @@ class LedStrip
         void blinkRight(int r, int g, int b);
         void blinkLeft(int r, int g, int b);
         void off();
-        void backStop(int r, int g, int b);
+        void Stop(int r, int g, int b);
         void fullBack(int r, int g, int b);
         void fullTill(int r, int g, int b);
         void Christmas();
         void MuricaBaby();
+        void PanicButton();
+        //void SpookyScary();
+
 
 };
 #endif

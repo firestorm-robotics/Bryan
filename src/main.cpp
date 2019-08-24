@@ -19,6 +19,9 @@ float x;
 float y;
 bool isChristmas = false;
 bool isMuricaBaby = false;
+bool isPanicButton = false;
+bool isSpookyScary = false;
+
 //CRGB leds[20];
 void randomColor();
 void wipe(int r, int g, int b);
@@ -54,17 +57,17 @@ void loop()
   
   if(x > .1)
   {
-    ledStrip -> blinkRight(255, 150, 0);
+    ledStrip -> blinkRight(255, 191, 0);
   }
 
   if(x < -.1)
   {
-    ledStrip -> blinkLeft(255, 150, 0);
+    ledStrip -> blinkLeft(255, 191, 0);
   }
 
   if(x > -.1 && x < .1 && y < .01 && y > -.01)
   {
-    ledStrip -> backStop(255, 0, 0);
+    ledStrip -> Stop(255, 40, 0);
   }
 
   if(y < -.01)
@@ -89,6 +92,15 @@ void loop()
     ledStrip -> MuricaBaby();
   }
   
+  if(isPanicButton)
+  {
+    ledStrip -> PanicButton();
+  }
+
+/*if(y == -1)
+  {
+    ledStrip -> SpookyScary();
+  }*/
 
 } // put your main code here, to run repeatedly:
 
